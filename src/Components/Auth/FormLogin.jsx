@@ -12,8 +12,8 @@ export const FormLogin = () => {
     const navigate = useNavigate();
 
     const [inputValues, handleChangeInput, resetForm] = useForm({
-        lEmail: 'test@test.com',
-        lPassword: '123456'
+        lEmail: '',
+        lPassword: ''
     });
     const { lEmail, lPassword } = inputValues;
 
