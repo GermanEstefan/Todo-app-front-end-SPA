@@ -12,38 +12,48 @@ export const userStatusContext = createContext({}); //Provedor de la data del us
 export const TodoApp = () => {
 
     const [userData, setUserData] = useState({});
+    const [checkingAuth, setCheckingAuth] = useState(true);
 
     useEffect(() => { //Verifica si el usuario esta auth
         verifyAuth().then(resp => {
             if (!resp) {
+                setCheckingAuth(false);
                 return;
             }
+            setCheckingAuth(false);
             setUserData(resp.userData);
         })
     }, []);
 
     return (
         <userStatusContext.Provider value={{ userData, setUserData }}>
-            <Routes>
-                {
-                    (Object.keys(userData).length === 0) //Objeto vacio === no auth
-                        ? <>
-                            <Route path='/' element={<Auth />}>
-                                <Route index element={<FormLogin />}></Route>
-                                <Route path='/login' element={<FormLogin />}></Route>
-                                <Route path='/register' element={<FormRegister />}></Route>
-                                <Route path='*' element={<FormLogin />}></Route>
-                            </Route>
-                        </>
+            {
+                (checkingAuth)
+                    ? <h1 style={{ "padding": "20px", "color": "var(--background-2)" }}>
+                        Checking auth...
+                    </h1>
+                    : <Routes>
+                        {
+                            (Object.keys(userData).length === 0) //Objeto vacio === no auth
+                                ? <>
+                                    <Route path='/' element={<Auth />}>
+                                        <Route index element={<FormLogin />}></Route>
+                                        <Route path='/login' element={<FormLogin />}></Route>
+                                        <Route path='/register' element={<FormRegister />}></Route>
+                                        <Route path='*' element={<FormLogin />}></Route>
+                                    </Route>
+                                </>
 
-                        : <>
-                            <Route path='/todoui' element={<TodoUi />}>
-                                <Route path='/todoui/addtodo' element={<FormAddTodo />}></Route>
-                            </Route>
-                            <Route path='*' element={<TodoUi />}></Route>
-                        </>
-                }
-            </Routes>
+                                : <>
+                                    <Route path='/todoui' element={<TodoUi />}>
+                                        <Route path='/todoui/addtodo' element={<FormAddTodo />}></Route>
+                                    </Route>
+                                    <Route path='*' element={<TodoUi />}></Route>
+                                </>
+                        }
+                    </Routes>
+            }
+
         </userStatusContext.Provider>
     )
 
