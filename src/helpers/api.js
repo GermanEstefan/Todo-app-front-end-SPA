@@ -1,9 +1,9 @@
-const baseUrlDev = `http://localhost:4500/api`;
+const baseUrlApi = process.env.REACT_APP_API_URL;
 
 export const verifyAuth = async () => {
     const tokenInLocalStorage = localStorage.getItem('token') || '';
     try {
-        const resp = await fetch(`${baseUrlDev}/auth/verify`, {
+        const resp = await fetch(`${baseUrlApi}/auth/verify`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const verifyAuth = async () => {
 export const fetchApi = async (endpoint, method, data) => {
     const tokenInLocalStorage = localStorage.getItem('token') || '';
     if (!tokenInLocalStorage) { //Request sin token(Login, register)
-        const resp = await fetch(`${baseUrlDev}/${endpoint}`, {
+        const resp = await fetch(`${baseUrlApi}/${endpoint}`, {
             method,
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export const fetchApi = async (endpoint, method, data) => {
         return await resp.json();
 
     } else { //Request con token(Para usuarios autenticados)
-        const resp = await fetch(`${baseUrlDev}/${endpoint}`, {
+        const resp = await fetch(`${baseUrlApi}/${endpoint}`, {
             method,
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const fetchApi = async (endpoint, method, data) => {
 
 export const fetchApiFormData = async (endpoint, method, data) => {
     const tokenInLocalStorage = localStorage.getItem('token') || '';
-    const resp = await fetch(`${baseUrlDev}/${endpoint}`, {
+    const resp = await fetch(`${baseUrlApi}/${endpoint}`, {
         method,
         headers: {
             'access-token': tokenInLocalStorage || ''

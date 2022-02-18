@@ -10,7 +10,6 @@ import { TodoUi } from './views/TodoUi';
 export const userStatusContext = createContext({}); //Provedor de la data del usuario
 
 export const TodoApp = () => {
-
     const [userData, setUserData] = useState({});
     const [checkingAuth, setCheckingAuth] = useState(true);
 
