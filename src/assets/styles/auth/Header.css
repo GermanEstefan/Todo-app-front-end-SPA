@@ -1,0 +1,42 @@
+header{
+    align-items: center;
+    display: flex;
+    padding-top: 20px ;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+header h1 {
+    color: var(--background-2);
+    margin: 0px 20px 0px 20px;
+}
+
+.social-medias{
+    font-size: 1.5rem;
+}
+
+.social-medias *{
+    cursor: pointer;
+    transition: color .2s ease-in;
+} 
+
+.social-medias > *:hover{
+    color: #4e4e4e;
+}
+
+.social-medias :first-child{
+    margin-right: 15px;
+}
+
+@media screen and (min-width: 800px){
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    .social-medias{
+        font-size: 2rem;
+    }
+
+  
+}

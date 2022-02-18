@@ -1,0 +1,33 @@
+.container-todoui__dashboard {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.container-todoui__dashboard > span {
+    border: none;
+    cursor: pointer;
+    color: #be0101;;
+    position: absolute;
+    font-weight: bold;  
+    padding: 10px;
+    font-size: 1.2rem;
+    right: 10px;
+    transition: color .2s ease-in;
+}
+
+.container-todoui__dashboard > span:hover{
+    color: #ff0101;
+}
+
+@media screen and (min-width: 800px){
+
+    .container-todoui__dashboard > span{
+        font-size: 1.6rem;
+        right: 30px;
+        top: 10px;
+    }
+
+}

@@ -1,0 +1,51 @@
+@import url(./Header.css);
+@import url(./FormLogin.css);
+@import url(./FormRegister.css);
+
+.container-auth{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;  
+}
+
+.form{
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+}
+
+.input-container > i {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+}
+
+.input-container > input{
+    padding-left: 25px;
+} 
+
+.dev{
+    bottom: 5px;
+    left: 5px;
+    position: absolute;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 800px){
+
+    .dev{
+        bottom: 15px;
+        left: 15px;
+        position: absolute;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+
+}
+

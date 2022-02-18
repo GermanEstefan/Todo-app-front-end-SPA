@@ -1,0 +1,71 @@
+.container-form-add-todo{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 30px;
+    position: fixed;
+    top: -30px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+.form-add-todo {
+    position: relative;
+    border-radius: 5px;
+    background-color: var(--background);
+    max-width: 250px;
+}
+
+.form-add-todo > i{
+    color: var(--background-2);
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-add-todo > h2 {
+    color: var(--background-2);
+    font-weight: lighter;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container-form-add-todo > form {
+    justify-content: center;
+    color: var(--soft-white);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 70%;
+}
+
+.form-add-todo > input {
+    margin-bottom: 15px;
+}
+
+.form-add-todo > button {
+    border: none;
+    border-radius: 5px;
+    background-color: #2abb7c;
+    cursor: pointer;
+    color: #f2f2f2;
+    font-weight: bold;    
+    padding: 6px;
+    transition: background-color .2s ease-in;
+}
+
+.form-add-todo > button:hover{
+    background-color: #31d890;
+}
+
+@media screen and (min-width: 800px){
+
+    .form-add-todo{
+        max-width: 300px;
+    }
+
+}
+

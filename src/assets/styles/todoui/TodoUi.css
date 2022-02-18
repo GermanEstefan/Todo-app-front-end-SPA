@@ -1,0 +1,48 @@
+@import url(./Dashboard.css);
+@import url(./UserInfo.css);
+@import url(./ToDoListContainer.css);
+@import url(./FormAddTodo.css);
+
+.container-todoui{
+    height: 100vh;
+}
+
+.container-todoui__add-todo{
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: var(--background-2);
+    transition: color .2s ease-in;
+}
+
+.container-todoui__add-todo:hover{
+    color: #31d890;
+}
+
+.container-todoui__dev{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 800px){
+
+    .container-todoui__add-todo{
+        bottom: 50px;
+        right: 50px;
+        font-size: 3.5rem;
+    }
+
+    .container-todoui__dev{
+        bottom: 20px;
+        left: 20px;
+        font-size: 1.3rem;
+    }
+}
+
+
+
+

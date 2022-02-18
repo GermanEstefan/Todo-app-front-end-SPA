@@ -1,0 +1,44 @@
+.container__form-register{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container__form-register > form > h2 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.container__form-register > form > span {
+    cursor: pointer;
+    color: var(--background-2);
+    font-weight: bold;
+    margin-bottom: 25px;
+    transition: color .2s ease-in;
+}
+
+.container__form-register > form > span:hover{
+    color: #31d890;
+}
+
+.container__form-register > form > button {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--background-2);
+    cursor: pointer;
+    color: #f2f2f2;
+    font-weight: bold;
+    padding: 6px;
+    transition: background-color .2s ease-in;
+    width: 100%;
+}
+
+.container__form-register > form > button:hover{
+    background-color: #31d890;
+}
+
+@media screen and (min-width: 800px){
+    
+}
+
+

@@ -1,0 +1,40 @@
+.container__form-login{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container__form-login > form > h2 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.container__form-login > form > button {
+    background-color: var(--background-2);
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 6px;
+    transition: background-color .2s ease-in;
+    width: 100%;
+}
+
+.container__form-login > form > button:hover{
+    background-color: #31d890;
+}
+
+.container__form-login > form > span > b{
+    color: var(--background-2);
+    cursor: pointer;
+}
+
+.container__form-login > form > span > b:hover{
+    color: #31d890
+}
+
+
+
+
