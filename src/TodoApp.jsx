@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { FormLogin } from './Components/Auth/FormLogin';
 import { FormRegister } from './Components/Auth/FormRegister';
 import { FormAddTodo } from './Components/TodoUi/FormAddTodo';
@@ -12,13 +12,16 @@ export const userStatusContext = createContext({}); //Provedor de la data del us
 export const TodoApp = () => {
     const [userData, setUserData] = useState({});
     const [checkingAuth, setCheckingAuth] = useState(true);
+    const navigate = useNavigate('');
 
     useEffect(() => { //Verifica si el usuario esta auth
         verifyAuth().then(resp => {
+            console.log(resp)
             if (!resp) {
                 setCheckingAuth(false);
                 return;
             }
+            navigate('/todoui')
             setCheckingAuth(false);
             setUserData(resp.userData);
         })
