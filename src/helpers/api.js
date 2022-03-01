@@ -1,4 +1,4 @@
-const baseUrlApi = 'http://localhost:4500/api';
+const baseUrlApi = process.env.REACT_APP_API_URL;
 
 export const verifyAuth = async () => {
     const tokenInLocalStorage = localStorage.getItem('token') || '';
