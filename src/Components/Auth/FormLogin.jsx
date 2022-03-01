@@ -74,6 +74,7 @@ export const FormLogin = () => {
             localStorage.setItem('token', resp.userData.token);
             if (isMounted) {
                 setUserData(resp.userData);
+                navigate('/todoui')
                 resetForm();
             }
         } catch (error) {

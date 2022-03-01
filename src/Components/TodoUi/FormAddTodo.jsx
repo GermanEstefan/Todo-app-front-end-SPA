@@ -26,6 +26,7 @@ export const FormAddTodo = () => {
             if (!resp.ok) { //Token eliminado del localStorage
                 alert(resp.msg);
                 setUserData({});
+                navigate('/login')
                 return;
             }
             setUserData({ ...userData, todos: [...todos, resp.newTodo] })

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchApi } from "../../helpers/api";
 import { modifyTodo } from "../../helpers/modifyTodo";
 import { userStatusContext } from "../../TodoApp";
@@ -7,6 +8,7 @@ export const Todo = ({ valueTodo, idTodo, isComplete }) => {
 
     const { userData, setUserData } = useContext(userStatusContext);
     const { todos } = userData;
+    const navigate = useNavigate();
 
     const handleDelete = async () => {
         const todoFiletered = todos.filter(todo => todo.id !== idTodo);
@@ -16,6 +18,7 @@ export const Todo = ({ valueTodo, idTodo, isComplete }) => {
             if (!resp.ok) { //Token eliminado del localStorage
                 alert(resp.msg);
                 setUserData({});
+                navigate('/login')
                 return;
             }
             setUserData({ ...userData, todos: todoFiletered });
@@ -34,6 +37,7 @@ export const Todo = ({ valueTodo, idTodo, isComplete }) => {
                 if (!resp.ok) { //Token eliminado del localStorage
                     alert(resp.msg);
                     setUserData({});
+                    navigate('/login')
                     return;
                 }
                 const noCompleteTodo = modifyTodo(todos, idTodo, 'complete', false);

@@ -1,7 +1,6 @@
-const baseUrlApi = process.env.REACT_APP_API_URL;
+const baseUrlApi = 'http://localhost:4500/api';
 
 export const verifyAuth = async () => {
-    console.log(process.env.REACT_APP_API_URL)
     const tokenInLocalStorage = localStorage.getItem('token') || '';
     try {
         const resp = await fetch(`${baseUrlApi}/auth/verify`, {
@@ -11,7 +10,6 @@ export const verifyAuth = async () => {
                 'access-token': tokenInLocalStorage
             }
         });
-
         const respToJSON = await resp.json();
 
         if (respToJSON.ok) {

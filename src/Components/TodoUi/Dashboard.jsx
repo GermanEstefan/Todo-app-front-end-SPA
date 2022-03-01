@@ -1,14 +1,16 @@
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom";
 import { userStatusContext } from "../../TodoApp";
 
 export const Dashboard = () => {
 
     const { setUserData } = useContext(userStatusContext);
+    const naviage = useNavigate();
 
     const handleLogout = () => {
-        //No es necesario hacer una navegacion programatica ya que las rutas protegidas hacen el trabajo 
         setUserData({});
         localStorage.removeItem('token');
+        naviage('/login')
     }
 
     return (
